@@ -1,1 +1,150 @@
 @import "tailwindcss";
+
+@theme {
+  --color-pink: #e52996;
+  --color-blue-200: #1845c7;
+  --color-blue-100: #163e6f85;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0a0c10;
+    height: 100vh;
+  }
+  h1 {
+    font: size 120px;
+    font-style: bold;
+  }
+  h2 {
+    @apply text-[92px] font-extrabold;
+  }
+  h3 {
+    @apply text-[41px] font-extrabold;
+  }
+  span {
+    @apply text-[20px] font-normal;
+  }
+  p {
+    @apply text-[20px] font-normal;
+  }
+}
+
+@layer components {
+  main {
+    @apply w-full overflow-x-hidden;
+  }
+  .card-wrapper {
+    position: relative;
+    /* transform: rotate(-25deg); */
+    width: 150px;
+    aspect-ratio: 1/1;
+    padding: 2px;
+  }
+
+  .card-blur {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background-image: conic-gradient(
+      from 0deg at center,
+      var(--color-pink),
+      var(--color-blue-100),
+      var(--color-blue-200),
+      var(--color-pink)
+    );
+    filter: blur(1rem);
+    z-index: 0;
+  }
+
+  .card-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background-image: conic-gradient(
+      from 0deg at center,
+      var(--color-pink),
+      var(--color-blue-100),
+      var(--color-blue-200),
+      var(--color-pink)
+    );
+    padding: 0.5rem;
+    z-index: 1;
+  }
+
+  .card {
+    position: relative;
+    background: #142d4a;
+    border-radius: 10px;
+    color: white;
+    @apply flex flex-col px-2 py-6 items-center justify-center gap-4;
+    z-index: 2;
+  }
+
+  button {
+    position: relative;
+    border: none;
+    background: #0e2136;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 12px;
+    z-index: 0;
+    cursor: pointer;
+    overflow: hidden; /* keeps blur glow inside the button */
+  }
+
+  button::before,
+  button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: conic-gradient(
+      from 0deg at center,
+      var(--color-pink),
+      var(--color-blue-100),
+      var(--color-blue-200),
+      var(--color-pink)
+    );
+    z-index: -1;
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude; /* cuts out the center */
+    -webkit-mask-composite: destination-out;
+  }
+
+  nav {
+    @apply bg-white/5 backdrop-blur-3xl mx-auto w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl md:rounded-3xl 
+    px-16 py-4 text-white;
+    div {
+      @apply flex flex-col md:flex-row items-center justify-center md:justify-between gap-4;
+    }
+    ul {
+      @apply flex gap-6 text-gray-400;
+    }
+  }
+  ul a {
+    position: relative;
+  }
+  ul a:hover {
+    color: white;
+  }
+  ul a::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(
+      to right,
+      var(--color-pink),
+      var(--color-blue-200)
+    );
+    transition: all 0.5s;
+  }
+  ul a:hover::before {
+    width: 100%;
+  }
+}
