@@ -12,21 +12,18 @@
     padding: 0;
     background: #0a0c10;
     height: 100vh;
+    /* font-family: "Inter", sans-serif; */
   }
   h1 {
     @apply text-4xl md:text-8xl leading-[60px] lg:leading-[105px];
     font-weight: 700;
-    background: linear-gradient(to bottom, #ffffff, transparent);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   h2 {
     background: linear-gradient(to bottom, #ffffff, transparent);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    @apply text-[72px];
+    @apply text-[62px];
   }
   h3 {
     @apply text-[31px] text-gray-100;
@@ -35,7 +32,7 @@
     @apply text-[20px] text-gray-400 font-normal;
   }
   p {
-    @apply text-[20px] font-normal text-gray-400;
+    @apply text-[20px] font-normal text-gray-300;
   }
 }
 
@@ -57,12 +54,12 @@
     @apply absolute h-[40%] bottom-0   md:h-[80%] left-0  right-0 lg:top-[38%] xl:top-[30%];
   }
   #trending {
-    @apply mt-30  lg:max-w-4xl xl:max-w-6xl mx-auto min-h-dvh;
+    @apply mt-30 space-y-10 lg:max-w-4xl xl:max-w-6xl mx-auto mb-30;
   }
+
   .trending-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
     @apply xl:gap-[30px] lg:gap-[20px];
   }
 
@@ -187,6 +184,15 @@
   ul a:hover::before {
     width: 100%;
   }
+}
+
+@layer utilities {
+  .white-gradient {
+    background: linear-gradient(to bottom, #ffffff, transparent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .gradient-text {
     background: linear-gradient(
       to right,
@@ -196,5 +202,12 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .radial-background {
+    background-image: radial-gradient(
+      ellipse 80% 10% at center,
+      var(--color-pink),
+      transparent 100%
+    );
   }
 }

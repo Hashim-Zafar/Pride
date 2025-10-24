@@ -7,7 +7,6 @@ function App() {
     <main>
       <Hero />
       <Trending />
-      <section className="min-h-dvh"></section>
     </main>
   );
 }

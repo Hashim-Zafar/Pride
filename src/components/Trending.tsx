@@ -46,28 +46,37 @@ function Trending() {
       );
   }, []);
   return (
-    <section id="trending">
-      <div className="trending-grid">
-        {[1, 2, 3].map((_, i) => (
-          <div
-            key={i}
-            ref={(el) => {
-              cardsRef.current[i] = el!;
-            }}
-            className="card-wrapper"
-          >
-            <div className="card-blur"></div>
-            <div className="card-border"></div>
-            <div className="card">
-              <img src="src/assets/coverPage.png" alt="Song" />
-              <h3>Sense</h3>
-              <p>Mark Adrian</p>
-              <p>130K Listens</p>
+    <div className="radial-background">
+      <section id="trending">
+        <div className="text-center">
+          <h2>The Hottest Tracks Of the</h2>
+          <h2>Week Only On Pride</h2>
+          <p className="text-gray-500">
+            Stream Millions of Songs Without any Interuptions
+          </p>
+        </div>
+        <div className="trending-grid">
+          {[1, 2, 3].map((_, i) => (
+            <div
+              key={i}
+              ref={(el) => {
+                cardsRef.current[i] = el!;
+              }}
+              className="card-wrapper"
+            >
+              <div className="card-blur"></div>
+              <div className="card-border"></div>
+              <div className="card">
+                <img src="src/assets/coverPage.png" alt="Song" />
+                <h3>Sense</h3>
+                <p>Mark Adrian</p>
+                <p>130K Listens</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
 
