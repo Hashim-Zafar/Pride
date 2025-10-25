@@ -42,8 +42,8 @@ function Artists() {
           </div>
 
           <div className="flex gap-8 items-center justify-center mt-20">
-            {ArtistsList.map((artist) => (
-              <div className="artist-card">
+            {ArtistsList.map((artist, index) => (
+              <div key={index} className="artist-card">
                 <div className="artist-cover">
                   <img
                     className="w-full h-full"

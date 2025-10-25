@@ -100,6 +100,15 @@
     }
   }
 
+  .scroll-section-outer {
+    @apply overflow-hidden;
+  }
+  .scroll-section-inner {
+    @apply h-[100vh] w-[200vw] flex flex-row;
+  }
+  .scroll-section {
+    @apply h-[100vh] w-[100vw];
+  }
   .card-border {
     position: absolute;
     inset: 0;
