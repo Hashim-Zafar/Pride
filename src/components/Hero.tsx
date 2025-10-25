@@ -48,6 +48,12 @@ function Hero() {
         </div>
         {/* Downlaod Button and text */}
         <div className="flex items-center justify-center  lg:items-center text-center lg:justify-between lg:mx-[3%] lg:h-[50%]">
+          <div className="paragraph hidden md:flex md:flex-col ">
+            <span>Loud.Limitless.Alive</span>
+            <h4 className="text-5xl gradient-text">
+              Feel the Beat <br /> of Freedom
+            </h4>
+          </div>
           <div className="paragraph flex flex-col items-center gap-4 ">
             <p>
               Stream endlessly, skip the noise, <br />
@@ -56,12 +62,6 @@ function Hero() {
             <p>
               <button>Download Now</button>
             </p>
-          </div>
-          <div className="paragraph hidden md:flex md:flex-col ">
-            <span>Loud.Limitless.Alive</span>
-            <h4 className="text-5xl gradient-text">
-              Feel the Beat <br /> of Freedom
-            </h4>
           </div>
         </div>
       </section>
