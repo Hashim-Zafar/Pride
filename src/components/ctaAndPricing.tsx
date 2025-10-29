@@ -14,7 +14,7 @@ function CtaAndPricing() {
         trigger: triggerRef.current,
         start: "top top",
         end: "2000 top",
-        scrub: 0.9,
+        scrub: 0.5,
         pin: true,
       },
     });

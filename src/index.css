@@ -57,9 +57,10 @@
     @apply mt-30 space-y-10 lg:max-w-4xl xl:max-w-6xl mx-auto mb-30;
   }
 
-  .trending-grid {
+  .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
     @apply xl:gap-[30px] lg:gap-[20px];
   }
 
@@ -82,6 +83,19 @@
     );
     filter: blur(1rem);
     z-index: 0;
+  }
+  .card-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background-image: conic-gradient(
+      from 0deg at center,
+      var(--color-pink),
+      var(--color-blue-100),
+      var(--color-blue-200),
+      var(--color-pink)
+    );
+    z-index: 1;
   }
 
   .artist-card {
@@ -107,20 +121,7 @@
     @apply h-[100vh] w-[200vw] flex flex-row;
   }
   .scroll-section {
-    @apply h-[100vh] w-[100vw];
-  }
-  .card-border {
-    position: absolute;
-    inset: 0;
-    border-radius: 10px;
-    background-image: conic-gradient(
-      from 0deg at center,
-      var(--color-pink),
-      var(--color-blue-100),
-      var(--color-blue-200),
-      var(--color-pink)
-    );
-    z-index: 1;
+    @apply h-[100vh] w-[100vw] my-auto;
   }
 
   .card {
@@ -142,7 +143,7 @@
     }
   }
 
-  button {
+  .button-download {
     display: inline-block;
     width: fit-content;
     position: relative;
@@ -156,8 +157,8 @@
     overflow: hidden; /* keeps blur glow inside the button */
   }
 
-  button::before,
-  button::after {
+  .button-download::before,
+  .button-download::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -209,6 +210,33 @@
   ul a:hover::before {
     width: 100%;
   }
+
+  .price-container {
+    @apply flex flex-col pt-8 px-4 gap-8 bg-[#22223b] rounded-[12px];
+
+    h4 {
+      @apply text-3xl;
+    }
+
+    p {
+      @apply text-[16px];
+    }
+
+    span {
+      @apply text-[12px];
+    }
+
+    ul {
+      @apply space-y-1.5 text-white/70 list-disc px-4;
+    }
+  }
+
+  .btn-trial {
+    @apply border-2   rounded-4xl text-black py-3;
+  }
+  .btn-one-time {
+    @apply border-2 rounded-4xl py-3 border-gray-600 text-white bg-[#22223b];
+  }
 }
 
 @layer utilities {
@@ -241,5 +269,8 @@
       var(--color-blue-200),
       transparent 100%
     );
+  }
+  .linear-gradient {
+    background: linear-gradient(to bottom, #892066, #89206633);
   }
 }

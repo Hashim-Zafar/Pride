@@ -10,7 +10,6 @@ function App() {
       <Trending />
       <Artists />
       <CtaAndPricing />
-      <section className="bg-pink min-h-dvh"></section>
     </main>
   );
 }

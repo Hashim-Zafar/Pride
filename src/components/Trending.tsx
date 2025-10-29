@@ -1,13 +1,12 @@
-import MediaQuery from "react-responsive";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import { trendingCards } from "../utils/constants";
 
 function Trending() {
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
-  const isMobile = MediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {
     //get all card element
@@ -55,8 +54,8 @@ function Trending() {
             Stream Millions of Songs Without any Interuptions
           </p>
         </div>
-        <div className="trending-grid">
-          {[1, 2, 3].map((_, i) => (
+        <div className="grid-container">
+          {trendingCards.map((card, i) => (
             <div
               key={i}
               ref={(el) => {
@@ -67,10 +66,10 @@ function Trending() {
               <div className="card-blur"></div>
               <div className="card-border"></div>
               <div className="card">
-                <img src="src/assets/coverPage.png" alt="Song" />
-                <h3>Sense</h3>
-                <p>Mark Adrian</p>
-                <p>130K Listens</p>
+                <img src={card.img} alt="Song" />
+                <h3>{card.name}</h3>
+                <p>{card.Band}</p>
+                <p>{card.Listens}</p>
               </div>
             </div>
           ))}

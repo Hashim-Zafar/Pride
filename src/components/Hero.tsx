@@ -54,13 +54,13 @@ function Hero() {
               Feel the Beat <br /> of Freedom
             </h4>
           </div>
-          <div className="paragraph flex flex-col items-center gap-4 ">
-            <p>
+          <div className="paragraph flex flex-col items-center gap-8 ">
+            <p className="mb-4">
               Stream endlessly, skip the noise, <br />
               and lose yourself in your favorite tracks.
             </p>
             <p>
-              <button>Download Now</button>
+              <button className="button-download">Download Now</button>
             </p>
           </div>
         </div>
